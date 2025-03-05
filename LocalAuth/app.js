@@ -15,7 +15,9 @@ function validateEmail(email) {
         return false;
     }
     useremailError.textContent = "";
-    return true;
+    userEmail.value =""
+    return email;
+    
 }
 
 function validatePassword(password) {
@@ -29,17 +31,17 @@ function validatePassword(password) {
         return false;
     }
     userpasswordError.textContent = "";
-    return true;
+    userPassword.value = "";
+    return password;
+
 }
 
+userDatas  = JSON.parse(localStorage.getItem("useremail-password")) || [];
 loginBtn.addEventListener("click", function (e) {
-    const isEmail = validateEmail(userEmail.value.trim()); // Trim email input
-    const isPassword = validatePassword(userPassword.value.trim()); // Trim password input
-
-    // Prevent form submission if either email or password is invalid
-    if (!isEmail || !isPassword) {
-        e.preventDefault();
-    }
-    
-
+    e.preventDefault(); // Prevent form submission before validation
+    const Email = validateEmail(userEmail.value.trim()); 
+    const Password = validatePassword(userPassword.value.trim());
+    userDatas.push({Email,Password});
+    localStorage.setItem("useremail-password",JSON.stringify(userDatas));
+    alert("successfully stored in localstorage");
 });
