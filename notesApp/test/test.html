@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div class="container">
+    <h1>this is heading</h1>
+   </div>
+   <button id="add">add</button>
+   <button id="btn" >show</button>
+   <script>
+    const cont = document.querySelector(".container");
+    const additem = document.getElementById("add");
+    const show = document.getElementById("btn");
+    additem.addEventListener("click",function(){
+        localStorage.setItem("head",cont.innerHTML);
+    })
+    show.addEventListener("click",function(){
+        cont.innerHTML = localStorage.getItem("head");
+    })
+   </script>
+</body>
+</html>

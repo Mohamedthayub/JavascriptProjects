@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <!-- <h1>this is heading</h1> -->
+    </div>
+    <button id="add">Add</button>
+    <button id="show">Show</button>
+    <button id="delete">Delete</button>
+    <script>
+        const cont  = document.querySelector('.container');
+        const additem = document.getElementById("add");
+        const showitem = document.getElementById("show");
+        const deleteitem = document.getElementById("delete");
+
+        additem.addEventListener("click",function(){
+            localStorage.setItem("salam",cont.innerHTML);
+        })
+        showitem.addEventListener("click",function(){
+            cont.innerHTML = localStorage.getItem("salam");
+        })
+        deleteitem.addEventListener("click",function(){
+            cont.innerHTML = localStorage.clear();
+        })
+        // showitem.addEventListener("click")
+    </script>
+</body>
+</html>

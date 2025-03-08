@@ -1,24 +1,34 @@
-const container = document.querySelector(".text-container");
-const addItem = document.getElementById("additem");
-
-addItem.addEventListener("click",function(){
-    let  paraContainer = document.createElement("p");
-    let image = document.createElement("img");
-    image.src = "assets/images/delete.png";
-    image.className = "logo";
-    paraContainer.classList.add("input-container");
-    paraContainer.setAttribute("contenteditable","true")
-    container.appendChild(paraContainer).appendChild(image);
-})
-container.addEventListener("click",function(e){
-    if(e.target.tagName  == "IMG"){
-        e.target.parentElement.remove();
-        updateStorage();
-    }
-    else if(e.target.tagName === "p"){
-        
-    }
-})
-function updateStorage(){
-    localStorage.setItem("notes",container.innerHTML);
+const noteContainer = document.querySelector(".notes-container");
+const button = document.querySelector(".btn");
+let notes =  document.querySelectorAll(".input-box");
+function  update(){
+    localStorage.setItem("note",noteContainer.innerHTML);
 }
+function show(){
+    noteContainer.innerHTML = localStorage.getItem("note") || "" ;
+}
+show();
+button.addEventListener("click",function(){
+    let para =  document.createElement("p");
+    let image = document.createElement("img");
+    para.className = "input-box";
+    image.src = "assets/images/delete.png";
+    para.setAttribute("contenteditable","true");
+    noteContainer.appendChild(para).appendChild(image);
+    update();
+})
+
+noteContainer.addEventListener("click",function(e){
+    if(e.target.tagName === "IMG"){
+        e.target.parentElement.remove();
+    }
+    else if (e.target.tagName === "P"){
+        notes = document.querySelectorAll(".input-box");
+        notes.forEach(nt => {
+            nt.onkeyup = function(){
+                update();
+            }
+        })
+    }
+})
+
