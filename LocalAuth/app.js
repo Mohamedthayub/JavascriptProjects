@@ -17,7 +17,6 @@ function validateEmail(email) {
     useremailError.textContent = "";
     userEmail.value =""
     return email;
-    
 }
 
 function validatePassword(password) {

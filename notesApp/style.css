@@ -1,0 +1,31 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: violet;
+}
+.input-container{
+    width: 500px;
+    min-height: 150px;
+    /* background-color; */
+    background-color: white;
+    color: black;
+    border: none;
+    outline: none;
+    border-radius:10px;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px;
+}
+.input-container{
+    position: relative;
+}
+
+.input-container img{
+    width: 40px;
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+}

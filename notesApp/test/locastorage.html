@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+    </div>
+    <button id="btn">store</button>
+    <button id="shw">show</button>
+    <button id="rem">remove</button>
+    <script>
+        const cont = document.querySelector(".container");
+        const show = document.getElementById("shw");
+        const remove = document.getElementById("rem");
+        const button  = document.getElementById("btn");
+        button.addEventListener("click",function(){
+            localStorage.setItem("dua",cont.innerHTML);
+        })
+        show.addEventListener("click",function(){
+            cont.innerHTML = localStorage.getItem("dua")
+        })
+        remove.addEventListener("click",function(){
+            localStorage.clear();
+        })
+    </script>
+</body>
+</html>
