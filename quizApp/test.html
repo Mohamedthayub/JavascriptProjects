@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button:hover{
+            background-color: red;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn"></button>
+    <button class="btn"></button>
+    <button class="btn"></button>
+    <button class="btn"></button>
+    <button class="btn"></button>
+    <button class="btn"></button>
+    <button class="btn"></button>
+    <button class="btn"></button>
+    <button class="btn"></button>
+    <button class="btn"></button>
+
+    <button id="btn">Add name</button>
+    <script>
+        let names = ["mohamed","mohideen","thayub","asian","hazan","maruthaMuthu","naveen","sukirth","gokul","halik"];
+        let buttons = document.querySelectorAll(".btn");
+        let button = document.getElementById("btn");
+        button.addEventListener("click",() => {
+           buttons.forEach((btn,index) => {
+            btn.textContent = names[index];
+           })
+        })
+        
+
+    </script>
+</body>
+</html>
