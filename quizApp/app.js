@@ -8,7 +8,7 @@ const  questions = [
         {text : "Giraffe", correct : false},
      ]
 
-    },
+    }, 
     {
         question: "Which is smallest country in the world ?",
         answers : [     
@@ -39,49 +39,46 @@ const  questions = [
     }
 ]
 
-const questionElement = document.getElementById("question");
+const quesTion = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
-const nextButton =  document.getElementById("next-btn");
-
-
-let currentQuestionIndex = 0 ;
+const nextBtn = document.getElementById("next-btn");
+let currenIndex = 0;
 let score = 0;
-
-function startquiz(){
-    currentQuestionIndex = 0;
-    score  = 0;
-    nextButton.innerHTML = "Next";
-    showQuestion();
+function startQuiz(){
+    currenIndex = 0;
+    score = 0;
+    nextBtn.innerText = "Next";
+    startGame();
 }
- 
-function showQuestion(){
+function startGame(){
     resetState();
-    let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1; 
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
-    currentQuestion.answers.forEach(answer  => {
-        let button = document.createElement("button");
-        button.innerHTML = answer.text;
-        button.classList.add("btn");
-        answerButtons.appendChild(button);
-        if(answer.correct){
-            button.dataset.correct = answer.correct;
-        }
-        button.addEventListener("click",selectAnswer);
-    })
+    let askingQuestion = questions[currenIndex].question;
+    let questionNumber = currenIndex + 1 ;
+    quesTion.innerText  = questionNumber + "." + askingQuestion;
+    let currentQuestion = questions[currenIndex];
+    currentQuestion.answers.forEach(item => {
+    let data = item.text;
+
+    const button = document.createElement("button");
+    button.innerText = data;
+    button.classList.add("btn");
+    answerButtons.appendChild(button);
+    if(item.correct){
+        button.dataset.correct = item.correct;
+    }
+    button.addEventListener("click",selectAnswer);
+   })
 }
-
-
 function resetState(){
-    nextButton.style.display = "none";
+    nextBtn.style.display = "none";
     while(answerButtons.firstChild){
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
 function selectAnswer(e){
     let selectedBtn = e.target;
-    let  isCorrect = selectedBtn.dataset.correct === "true";
-    if(isCorrect){
+    let iscorrect = selectedBtn.dataset.correct === "true";
+    if(iscorrect){
         selectedBtn.classList.add("correct");
         score++;
     }
@@ -94,31 +91,32 @@ function selectAnswer(e){
         }
         button.disabled = true;
     })
-    nextButton.style.display = "block"; 
-
+    nextBtn.style.display = "block";
 }
-function showScore(){
+
+function showResult() {
     resetState();
-    questionElement.innerHTML = `your score ${score} out of ${questions.length}`;
-    nextButton.innerHTML = "Play Again";
-    nextButton.style.display = "block";
+    let name = `your score is ${score} and ${questions.length}`;
+    quesTion.innerText  = name;
+    nextBtn.style.display = "block";
 }
 
 function handleNextbutton(){
-    currentQuestionIndex++;
-    if(currentQuestionIndex < questions.length){
-        showQuestion();
+    currenIndex++;
+    if(currenIndex < questions.length){
+        startGame();
     }
     else{
-        showScore();
+        showResult()
     }
 }
-nextButton.addEventListener("click",() => {
-    if(currentQuestionIndex < questions.length){
+nextBtn.addEventListener("click",() => {
+    if(currenIndex < questions.length){
         handleNextbutton();
     }
     else{
-        startquiz();
+        startQuiz()
     }
 })
-startquiz();
+
+startQuiz();

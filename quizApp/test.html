@@ -5,38 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        button:hover{
-            background-color: red;
-            padding: 10px;
-            border: none;
-            border-radius: 10px;
+        button{
+            margin: 5px;
         }
     </style>
 </head>
 <body>
-    <button class="btn"></button>
-    <button class="btn"></button>
-    <button class="btn"></button>
-    <button class="btn"></button>
-    <button class="btn"></button>
-    <button class="btn"></button>
-    <button class="btn"></button>
-    <button class="btn"></button>
-    <button class="btn"></button>
-    <button class="btn"></button>
+    <div class="container">
 
-    <button id="btn">Add name</button>
+    </div>
+    <button id="rem" >remove</button>
     <script>
-        let names = ["mohamed","mohideen","thayub","asian","hazan","maruthaMuthu","naveen","sukirth","gokul","halik"];
-        let buttons = document.querySelectorAll(".btn");
-        let button = document.getElementById("btn");
-        button.addEventListener("click",() => {
-           buttons.forEach((btn,index) => {
-            btn.textContent = names[index];
-           })
+        let cont = document.querySelector(".container");
+        let names = ["thayub","mohamed","arshath","mumtaj"];
+        names.forEach(item => {
+            const button = document.createElement("button");
+            button.innerText = item;
+            cont.appendChild(button);
         })
-        
-
+        function remove(){
+            while(cont.firstChild){
+            cont.removeChild(cont.firstChild);
+        }
+    }
+    let btn  = document.getElementById("rem");
+    btn.addEventListener("click",remove);
     </script>
 </body>
 </html>
