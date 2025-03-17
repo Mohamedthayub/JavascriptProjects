@@ -58,8 +58,8 @@ function startGame(){
     let currentQuestion = questions[currenIndex];
     currentQuestion.answers.forEach(item => {
     let data = item.text;
-
     const button = document.createElement("button");
+
     button.innerText = data;
     button.classList.add("btn");
     answerButtons.appendChild(button);
@@ -118,5 +118,4 @@ nextBtn.addEventListener("click",() => {
         startQuiz()
     }
 })
-
 startQuiz();
