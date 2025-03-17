@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=5, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        .container{
+            background-color: tomato;
+            padding: 10px;
+            border-radius: 10px;
+        }
+       .hide{
+        display: nonea;
+       }
+    </style>
+</head>
+<body>
+    <div class="container hide">
+        <h1>this is Mohamed Mohideen Thayub</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, perspiciatis?</p>
+    </div>
+    <button id="btn">Add</button>
+    
+    <script>
+        const cont = document.querySelector(".container");
+        let but = document.getElementById("btn");
+        but.addEventListener("click",() => {
+            cont.classList.toggle("hide");
+        })
+    </script>
+</body>
+</html>
