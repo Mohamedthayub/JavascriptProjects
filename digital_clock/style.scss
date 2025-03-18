@@ -1,0 +1,53 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+$backgroundColor :yellow;
+$timeContainerColor :white;
+body{
+    h1{
+        text-align: center;
+        margin-top: 20px;
+        font-size: 3rem;
+    }
+    font-family: "poppins",sans-serif;
+    font-weight: 600;
+    background-color: $backgroundColor;
+    main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        .container{
+            display: flex;
+            .hour{
+                background-color:$timeContainerColor;
+                font-size: 7rem;
+                padding: 10px;
+                margin-left: 20px;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            }
+            p{
+                font-size: 7rem;
+                margin-left: 30px;
+            }
+            .minute{
+                background-color:$timeContainerColor;
+                font-size: 7rem;
+                padding: 10px;
+                margin-left: 20px;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            }
+            .second{
+                background-color: $timeContainerColor;
+                font-size: 7rem;
+                padding: 10px;
+                margin-left: 20px;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            }
+
+        }
+    }
+    
+}

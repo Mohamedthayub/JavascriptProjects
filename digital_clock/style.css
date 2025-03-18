@@ -1,0 +1,50 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  font-weight: 600;
+  background-color: yellow;
+}
+body h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 3rem;
+}
+body main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+body main .container {
+  display: flex;
+}
+body main .container .hour {
+  background-color: white;
+  font-size: 7rem;
+  padding: 10px;
+  margin-left: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+body main .container p {
+  font-size: 7rem;
+  margin-left: 30px;
+}
+body main .container .minute {
+  background-color: white;
+  font-size: 7rem;
+  padding: 10px;
+  margin-left: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+body main .container .second {
+  background-color: white;
+  font-size: 7rem;
+  padding: 10px;
+  margin-left: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}/*# sourceMappingURL=style.css.map */
