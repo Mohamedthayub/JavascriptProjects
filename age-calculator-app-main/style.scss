@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+$backgroundColor :hsl(0, 0%, 86%);
+$primaryColor :hsl(259, 100%, 65%);
+$containerColor:hsl(0, 0%, 100%);
+body{
+    background-color: hsl(0, 0%, 86%);
+    font-family: "Poppins", sans-serif;
+}
+
+@mixin flexdirection(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flexColoum(){
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+main{
+   @include flexdirection();
+    height: 100vh;
+    .container{
+        background-color: hsl(0,0%,100%);
+        width: 600px;
+        height: 500px;
+        border-radius: 15px;
+        background-color: $containerColor;
+        border-bottom-right-radius: 150px;
+    }
+
+.data-container{
+    display: flex;
+    justify-content: space-around;
+    input{
+        width: 100px;
+        padding: 12px;
+        border-radius: 5px;
+        margin-top:7px;
+        border: 0.5px solid hsl(0, 0%, 86%);
+        font-size: 1.5rem;
+        &::placeholder{
+            font-size:1.5rem;
+            color: hsl(0, 1%, 44%);
+        }
+    }
+
+    .day-inputs{
+        @include flexColoum();
+    }
+    .month-inputs{
+        @include flexColoum();
+    }
+    .year-inputs{
+        @include flexColoum();
+    }
+
+}
+.button-container{
+    display: flex;
+    justify-content:end;
+    margin-right: 30px;
+    margin-top: 30px;
+    img{
+        padding: 10px;
+        border-radius: 50px;
+        background-color: $primaryColor;
+    }
+}
+.show-age-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        font-size: 4rem;
+        color:$primaryColor ;
+    }
+    h2{
+        font-size: 4rem;
+    }
+    .day{
+        display: flex;
+    }
+    .month{
+        display: flex;
+        #monthh1{
+            margin-left: 60px;
+        }
+        #month{
+            margin-left: 10px;
+        }
+    }
+    .year{
+        display: flex;
+    }
+}
+}
+
+
