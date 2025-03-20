@@ -44,6 +44,7 @@ main{
         margin-top:7px;
         border: 0.5px solid hsl(0, 0%, 86%);
         font-size: 1.5rem;
+        font-weight: 600;
         &::placeholder{
             font-size:1.5rem;
             color: hsl(0, 1%, 44%);
@@ -79,6 +80,7 @@ main{
     h1{
         font-size: 4rem;
         color:$primaryColor ;
+        margin-right: 1rem;
     }
     h2{
         font-size: 4rem;
@@ -89,7 +91,7 @@ main{
     .month{
         display: flex;
         #monthh1{
-            margin-left: 60px;
+            margin-left: 62px;
         }
         #month{
             margin-left: 10px;
