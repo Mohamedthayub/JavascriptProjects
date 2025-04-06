@@ -24,9 +24,9 @@ function calculateAge(birthdate, birthmonth, birthyear) {
     let month = dates.getMonth() + 1; 
     let year = dates.getFullYear();
 
-    let userYear = year - birthyear;
     let userMonth = month - birthmonth;
     let userDate = day - birthdate;
+    let userYear = year - birthyear;
 
     if (userDate < 0) {
         userMonth -= 1;  
