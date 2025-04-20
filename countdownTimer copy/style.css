@@ -1,0 +1,12 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+p{
+    font-size: 3rem;
+}
+.timer{
+    display: flex;
+}
