@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="number"></h1>
+    <button id="btn">stop</button>
+    <script >
+        let num = document.querySelector("#number");
+        let button = document.querySelector("#btn");
+        let count = 0;
+        let result = setInterval(() => {
+            num.innerText = count;
+            count++;
+            // console.log(count);
+        },1000);
+        button.addEventListener("click",clear);
+        function clear(){
+            clearInterval(result);
+            count = 0;
+            num.innerText = "it has stopped";
+        }
+    </script>
+</body>
+</html>
