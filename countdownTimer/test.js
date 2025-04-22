@@ -1,7 +1,7 @@
-let interval = setInterval(() => {
-    console.log("Running..");
-},1000);
-
-setTimeout(() => {
-    clearInterval(interval)
-},9000);
+let timer = 22;
+if(timer){
+    console.log("it is working");
+}
+else{
+    console.log("it is not working");
+}
