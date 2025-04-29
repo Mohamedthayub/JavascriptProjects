@@ -5,9 +5,9 @@ const resetBtn = document.querySelector("#reset");
 let count = 0;
 let timer = null;
 function startTimer(){
-    if(timer){
-        clearInterval(timer);
-    }
+    // if(timer){
+    //     clearInterval(timer);
+    // }
     showNumber.innerText = count;
 
     timer = setInterval(() => {
