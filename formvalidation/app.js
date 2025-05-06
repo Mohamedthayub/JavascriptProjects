@@ -45,6 +45,8 @@ function validatephonenumber() {
     }
     if (!/^\d+$/.test(userNumber)) {
         userphoneError.innerText = "Only numbers are allowed, no spaces or special characters";
+        userphoneError.style.fontSize = "12px";
+        userphoneError.style.marginLeft = "25px";
         return false;
     }
 
