@@ -23,7 +23,8 @@ loginBtn.addEventListener("click",(e) => {
     let userPassword  = document.querySelector("#password").value;
 
     if(!userEmail ||  !userPassword){
-        showToast("Please enter both field");
+        // showToast("Please enter both field");
+        alert("you should enter both field")
         
     }
 
