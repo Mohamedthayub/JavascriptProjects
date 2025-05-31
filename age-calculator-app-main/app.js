@@ -1,4 +1,4 @@
-const  userDayInput  = document.getElementById("day");
+const userDayInput  = document.getElementById("day");
 const userMonthInput = document.getElementById("month");
 const userYearInput = document.getElementById("year");
 const button = document.getElementById("btn");
