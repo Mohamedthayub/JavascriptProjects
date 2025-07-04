@@ -4,23 +4,25 @@ const decreaseBtn = document.querySelector("#decrease");
 const resetButton = document.querySelector("#reset");
 const clickCountsResult = document.querySelector("#clickcount");
 const countHistory = document.querySelector(".count-history");
+const historyButton = document.querySelector("#history-btn");
 let count = 0; 
 let countClick = 0;
 let clickCounts = [];
-
+window.onload = () => {
+    getData();
+}
+function getData(){
+    clickCounts = JSON.parse(localStorage.getItem("counts")) || [];
+    clickCounts.forEach((history) => createHistory(history));
+}
 function addClickCount(count){
-    if(clickCounts.length >  10){
+    if(clickCounts.length >=  10){
         clickCounts.shift();
     }
-    else{
-        clickCounts.push(count);
-        clickCounts.forEach((item) => {
-            const para = document.createElement("p");
-            para.innerText = item;
-            countHistory.appendChild(para);
-        })
-    }
+    clickCounts.push(count);
+    localStorage.setItem("counts" ,JSON.stringify(clickCounts));
 }
+
 // let countClicks = [];
 increaseBtn.addEventListener("click",() => {
     count += 1;
@@ -29,6 +31,8 @@ increaseBtn.addEventListener("click",() => {
     clickCountsResult.innerText = `click counts : ${countClick}`
     addClickCount(countClick);
 })
+
+
 decreaseBtn.addEventListener("click",() => {
     count -= 1
     counterResult.innerText = `Count is : ${count}`
@@ -36,6 +40,8 @@ decreaseBtn.addEventListener("click",() => {
     clickCountsResult.innerText =  `click counts : ${countClick}`;
     addClickCount(countClick);
 })
+
+
 resetButton.addEventListener("click",() =>{
     count = 0;
     counterResult.innerText = `Count is : ${count}`;
@@ -43,3 +49,10 @@ resetButton.addEventListener("click",() =>{
     clickCountsResult.innerText  =  `click counts : ${countClick}`
      addClickCount(countClick);
 });
+
+function createHistory(item){
+    const para = document.createElement("p");
+    para.innerText = item;
+    countHistory.appendChild(para);
+}
+historyButton.addEventListener("click",getData);

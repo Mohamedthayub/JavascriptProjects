@@ -3,19 +3,15 @@
         const deleteData = document.querySelector("#dlt-data");
         const showData = document.querySelector("#show-data");
         const dataContainer = document.querySelector(".data-container");
-
         let name = ["mohamed","mohidee","thayub","nadheem"];
-
         function createItem(data){
             let personName  = document.createElement("p");
             personName.innerText = data;
             dataContainer.appendChild(personName);
-
         }
         addData.addEventListener("click",() => {
             localStorage.setItem("item",JSON.stringify(name));
         })
-
         showData.addEventListener("click",() => {
             let newData = localStorage.getItem("item");
             name = newData ? JSON.parse(newData) : [];
