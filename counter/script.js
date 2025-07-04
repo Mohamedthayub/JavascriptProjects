@@ -5,12 +5,16 @@ const resetButton = document.querySelector("#reset");
 const clickCountsResult = document.querySelector("#clickcount");
 const countHistory = document.querySelector(".count-history");
 const historyButton = document.querySelector("#history-btn");
+const clearhistroyButton = document.querySelector("#clear-history-btn");
 let count = 0; 
 let countClick = 0;
 let clickCounts = [];
 window.onload = () => {
     getData();
 }
+clearhistroyButton.addEventListener("click",() => {
+    localStorage.removeItem("counts");
+})
 function getData(){
     clickCounts = JSON.parse(localStorage.getItem("counts")) || [];
     clickCounts.forEach((history) => createHistory(history));
@@ -22,8 +26,6 @@ function addClickCount(count){
     clickCounts.push(count);
     localStorage.setItem("counts" ,JSON.stringify(clickCounts));
 }
-
-// let countClicks = [];
 increaseBtn.addEventListener("click",() => {
     count += 1;
     counterResult.innerText = `Count is : ${count}`
