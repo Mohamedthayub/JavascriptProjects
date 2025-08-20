@@ -1,31 +1,30 @@
 const increamentButton = document.querySelector("#increament");
 const decreamentButton = document.querySelector("#decreament");
+const randomImage = document.querySelector("#random");
 const showImage = document.querySelector("#image");
 const images = [
-    "/home/thayub/developer/test/slider/images/car1.jpg",
-    "/home/thayub/developer/test/slider/images/car2.jpg",
-    "/home/thayub/developer/test/slider/images/car3.jpg",
-    "/home/thayub/developer/test/slider/images/car4.jpg"
-
+    "images/car1.jpg",
+    "images/car2.jpg",
+    "images/car3.jpg",
+    "images/car4.jpg"
 ]
 let index = 0;
 
-
 increamentButton.addEventListener("click",() => {
-    console.log(index);
-    if(index >= images.length){
-        console.log(index);     
-        index = 0;
-        showImage.src = images[index];
-        
+    index++;
+    if(index > images.length - 1){
+        index = images.length - 1;
     }
-    else{
-        index++;
-        showImage.src = images[index];
-    }
-})
-
-decreamentButton.addEventListener("click", () => {
-    index--
     showImage.src = images[index];
+})
+decreamentButton.addEventListener("click",() => {
+    index--;
+    if(index < 1){
+        index = 0;
+    }
+    showImage.src = images[index];
+})
+randomImage.addEventListener("click",() => {
+    const rand = Math.floor(Math.random() * images.length);
+    showImage.src  = images[rand];
 })
