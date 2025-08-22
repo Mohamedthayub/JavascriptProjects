@@ -14,7 +14,6 @@ function startTimer() {
     },1000);
     
 }
-
 function stopTimer() {
     if(timer){
         clearInterval(timer);
