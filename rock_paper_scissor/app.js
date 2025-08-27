@@ -16,14 +16,12 @@ if(userWin){
     message.style.backgroundColor = "green";
     userPoint++;
     userScore.innerText = userPoint;
-
 }
 else{
     message.innerText =  `computer wins ${computerChoice} beats ${userchoice}`;
     message.style.backgroundColor = "red";
     computerPoint++;
     computerScore.innerText = computerPoint;
-
 }
 }
 function MatchDraw(){
@@ -35,7 +33,6 @@ function checkWinner(userchoice){
     let computerChoice = genComputer();
     if(userchoice == computerChoice){
         MatchDraw();
-
     }
     else{
         let userWin = true;
